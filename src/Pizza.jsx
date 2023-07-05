@@ -1,9 +1,15 @@
-export default function Pizza() {
+// eslint-disable-next-line react/prop-types
+export default function Pizza(props) {
+    // eslint-disable-next-line react/prop-types
+    const {name,photoName,ingredients,price} = props.pizzaObj
   return (
-    <div>
-      <h3>Pizza cute</h3>
-      <p>Lorem ipsum dolor sit amet.</p>
-      <img src='pizzas/focaccia.jpg' alt='pizza' />
-    </div>
+    <li className="pizza">
+        <img src={photoName} alt={name} />
+      <div>
+          <h3>{name}</h3>
+          <p>{ingredients}</p>
+          <span>{price}$</span>
+      </div>
+    </li>
   );
 }
