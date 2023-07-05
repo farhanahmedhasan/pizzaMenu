@@ -5,11 +5,14 @@ export default function Menu() {
   return (
     <menu className='menu'>
       <h2>Our menu</h2>
-        <ul className="pizzas">
+      {pizzaData.length > 0 ?
+          <ul className="pizzas">
             {pizzaData.map(pizza=>(
                 <Pizza key={pizza.name} pizzaObj={pizza}/>
             ))}
-        </ul>
+          </ul>
+        : <p>We are working on our menu. Please visit us later :) </p>
+      }
     </menu>
   );
 }
